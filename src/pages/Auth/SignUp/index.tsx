@@ -26,7 +26,12 @@ const SignUp = () => {
           navigate("/books");
         }}
         onError={(error) => {
-          toast.error(get(error, "response.data.message"));
+          console.log(error);
+
+          toast.error(
+            get(error, "response.data.message") ??
+              "This user is already registered or an error occurred!"
+          );
         }}
       >
         {({ isSubmitting, isLoading }) => {
