@@ -2,7 +2,7 @@ import { NavLink, Navigate, Outlet, useLocation } from "react-router-dom";
 import LoginBg from "assets/images/login-bg.jpg";
 const Auth = () => {
   const location = useLocation();
-  if (location.pathname === "/auth") return <Navigate to={"sign-in"} />;
+  if (location.pathname === "/auth") return <Navigate to={"sign-up"} />;
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-400 relative">
