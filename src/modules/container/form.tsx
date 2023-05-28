@@ -72,7 +72,7 @@ const FormContent: FC<IFormContent> = ({
             ? fields.reduce(
                 (prev, curr) => ({
                   ...prev,
-                  [curr.name]: curr.value ? curr.value : "",
+                  [curr.name]: curr.value ?? curr.value,
                 }),
                 {}
               )

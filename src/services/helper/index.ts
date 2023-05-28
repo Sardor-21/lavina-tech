@@ -16,8 +16,10 @@ function calculateMD5Sign({
 
   switch (method) {
     case "get":
+    case "delete":
       return MD5(method!.toUpperCase() + url + cookie.get("secret")).toString();
     case "post":
+    case "patch":
       return MD5(dataString).toString();
     default:
       return "";

@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { get } from "lodash";
-import { http } from "services";
+import { http, queryBuilder } from "services";
 
 interface IPostOptions {
   url: string;
@@ -14,7 +14,7 @@ const removeData = async ({
   onError = () => {},
 }: IPostOptions) => {
   return await http
-    .delete(url)
+    .delete(queryBuilder(url))
     .then((data) => {
       onSuccess(get(data, "data"));
     })

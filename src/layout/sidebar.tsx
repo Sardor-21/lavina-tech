@@ -2,15 +2,11 @@ import { Button } from "@mui/material";
 import CModal from "components/modal";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { cookie } from "services";
+import { logout } from "utils";
 
 const Sidebar = () => {
   const [logoutModal, setLogoutModal] = useState<boolean>(false);
-  const logout = () => {
-    cookie.remove("key");
-    cookie.remove("secret");
-    window.location.reload();
-  };
+
   return (
     <div className="sticky top-0 max-w-[250px] w-full h-screen overflow-y-auto py-6 bg-gray-100">
       <div className="min-h-[120px] px-6">

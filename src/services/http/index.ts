@@ -1,8 +1,8 @@
-import axios, { AxiosRequestConfig, InternalAxiosRequestConfig } from "axios";
-import cookie from "../cookie";
-import calculateMD5Sign from "services/helper";
+import axios, { InternalAxiosRequestConfig } from "axios";
 import { get } from "lodash";
-import { MD5 } from "crypto-js";
+import calculateMD5Sign from "services/helper";
+import { logout } from "utils";
+import cookie from "../cookie";
 const http = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
   timeout: 30000,
@@ -34,6 +34,9 @@ http.interceptors.request.use(
 http.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (get(error, "response.status") === 401) {
+      logout();
+    }
     return Promise.reject(error);
   }
 );

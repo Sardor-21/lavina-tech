@@ -25,7 +25,7 @@ export type TContainerAllProps = {
   items: any;
 };
 
-export type IMethod = "post" | "put" | "delete";
+export type IMethod = "post" | "put" | "delete" | "patch";
 
 type TRoutesObj = {
   path: string;
