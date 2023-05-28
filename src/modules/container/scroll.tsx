@@ -40,14 +40,12 @@ const Scroll = ({
     onError,
     queryOptions,
   });
-  if (!customMoreBtn) {
-    useEffect(() => {
-      if (inView && data.hasNextPage) {
-        data.fetchNextPage();
-      }
-    }, [inView]);
-  }
 
+  useEffect(() => {
+    if (inView && data.hasNextPage) {
+      data.fetchNextPage();
+    }
+  }, [inView]);
   const items: object[] | undefined = get(data, "data.pages")
     ?.map((item) => get(item, dataKey))
     .flat(1);

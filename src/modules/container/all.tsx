@@ -38,7 +38,6 @@ const All: FC<IContainer> = ({
     queryOptions,
     params,
   });
-  console.log(data);
 
   const newData: { items: object[] | []; meta: TMeta } = {
     items: get(data, `data.${dataKey}`, []),

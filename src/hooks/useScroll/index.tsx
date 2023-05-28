@@ -3,7 +3,6 @@ import {
   UseQueryOptions,
   useInfiniteQuery,
 } from "@tanstack/react-query";
-import { get } from "lodash";
 import qs from "qs";
 import { http, queryBuilder } from "services";
 import { TParams } from "services/types";

@@ -26,3 +26,14 @@ export type TContainerAllProps = {
 };
 
 export type IMethod = "post" | "put" | "delete";
+
+type TRoutesObj = {
+  path: string;
+  element: () => JSX.Element;
+  children?: TRoutesObj[];
+};
+
+export type TRoutes = {
+  protectedRoutes: TRoutesObj[];
+  routes: TRoutesObj[];
+};

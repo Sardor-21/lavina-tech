@@ -115,7 +115,7 @@ const FormContent: FC<IFormContent> = ({
             }
 
             if (field.required) {
-              validationField = validationField.required("Требуется ввод");
+              validationField = validationField.required("Required");
             }
 
             if (field.min) {
